@@ -1,0 +1,12 @@
+1. Phân tích hành vi hệ thống khi người dùng chọn "Cancel"
+Khi người dùng tương tác với hộp thoại xác nhận và nhấn vào nút "Cancel" (Hủy) hoặc biểu tượng đóng cửa sổ (X), phương thức showConfirmDialog sẽ trả về một giá trị số nguyên tương ứng với hằng số JOptionPane.CANCEL_OPTION (giá trị là 2) hoặc JOptionPane.CLOSED_OPTION (giá trị là -1).
+
+Trong cấu trúc mã nguồn hiện tại, biến option được so sánh trực tiếp với hằng số JOptionPane.YES_OPTION thông qua toán tử điều kiện ba ngôi. Do giá trị của lệnh "Cancel" không thỏa mãn điều kiện bằng với "Yes", biểu thức sẽ trả về giá trị logic false. Kết quả là hệ thống mặc định xử lý hành động này tương đương với lệnh "No" và hiển thị thông báo: "You've chosen: No". Về mặt kỹ thuật, chương trình không bị lỗi nhưng về mặt trải nghiệm người dùng, kết quả này chưa phản ánh chính xác ý định hủy bỏ thao tác của người sử dụng.
+
+
+2. Phương pháp tùy chỉnh các lựa chọn (Options) cho người dùng
+Việc tùy biến các nút chức năng trong thư viện Swing có thể được thực hiện thông qua hai giải pháp chính tùy theo yêu cầu của giao diện:
+
+Trường hợp giới hạn hai lựa chọn "Yes" và "No": Thay vì sử dụng bộ nút mặc định (gồm Yes, No, Cancel), cần bổ sung tham số JOptionPane.YES_NO_OPTION vào lời gọi hàm. Điều này sẽ loại bỏ hoàn toàn nút "Cancel", buộc người dùng phải đưa ra quyết định khẳng định hoặc phủ định rõ ràng.
+
+Trường hợp tùy chỉnh nhãn nút bấm (ví dụ: "I do" và "I don't"): Để thực hiện yêu cầu này, phương thức showOptionDialog là giải pháp tối ưu nhất. Quy trình bao gồm việc khởi tạo một mảng các chuỗi ký tự (String[] options) chứa các nhãn mong muốn. Mảng này sau đó được truyền vào tham số options của hàm. Khi đó, thứ tự các nút trên giao diện sẽ tương ứng với thứ tự các phần tử trong mảng, và giá trị trả về của hàm sẽ là chỉ số (index) của phần tử được chọn (ví dụ: chọn "I do" trả về 0, "I don't" trả về 1). Việc sử dụng mảng giúp lập trình viên có thể mở rộng số lượng và nội dung nút bấm một cách linh hoạt mà không bị gò bó bởi các hằng số mặc định của hệ thống.
