@@ -1,0 +1,16 @@
+If you create a constructor method to build a DVD by title then create a constructor method to build a DVD by category. Does JAVA allow you to do this?
+Trả lời:
+Không, Java không cho phép làm điều này.
+
+Giải thích:
+Bởi vì cả title và category đều có cùng một kiểu dữ liệu là chuỗi (String).
+
+Nếu bạn tạo hai hàm:
+
+public DigitalVideoDisc(String title)
+
+public DigitalVideoDisc(String category)
+
+Thì đối với máy ảo Java, cả hai hàm này đều có cấu trúc y hệt nhau là: DigitalVideoDisc(String).
+
+Trong Java, tính năng nạp chồng (overloading) yêu cầu các hàm phải khác nhau về kiểu dữ liệu, số lượng hoặc thứ tự các tham số. Máy tính không quan tâm đến cái tên biến (title hay category) mà bạn đặt. Do cấu trúc giống hệt nhau, Java sẽ không biết bạn đang muốn gọi hàm nào khi chạy chương trình và sẽ báo lỗi trùng lặp (Duplicate method).
