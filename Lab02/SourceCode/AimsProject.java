@@ -1,25 +1,33 @@
 public class AimsProject {
     public static void main(String[] args) {
+        // Khởi tạo một giỏ hàng mới
         Cart anOrder = new Cart();
 
-        // Khởi tạo DVD phải truyền đủ 5 tham số
+        // Tạo mới các đối tượng đĩa DVD
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 124, 24.95f);
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", "John Musker", 90, 18.99f);
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
+        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", "", 0, 18.99f);
+        DigitalVideoDisc dvd4 = new DigitalVideoDisc("Dumamay", "Japanese Adult Video", "Ha Tien Dat", 60, 15.11f);
 
-        // Gọi hàm addDVD mới
-        anOrder.addDVD(dvd1);
-        anOrder.addDVD(dvd2);
-        anOrder.addDVD(dvd3);
+        // Thêm đĩa vào giỏ hàng
+        anOrder.addDigitalVideoDisc(dvd1);
+        anOrder.addDigitalVideoDisc(dvd2);
+        anOrder.addDigitalVideoDisc(dvd3);
+        anOrder.addDigitalVideoDisc(dvd4);
 
-        // In danh sách giỏ hàng bằng hàm displayCart mới
-        anOrder.displayCart();
+        // Chạy thử tính năng in ra giỏ hàng
+        anOrder.displayAllCart();
 
-        // Tính tổng tiền bằng hàm total()
+
+        // In ra tổng chi phí của giỏ hàng
         System.out.print("Total Cost is: ");
-        System.out.println(anOrder.total());
+        System.out.println(anOrder.totalCost());
 
-        // Gọi hàm xóa mới
-        anOrder.removeDVD(dvd2);
+        // Chạy thử tính năng xóa đĩa khỏi giỏ
+        anOrder.removeDigitalVideoDisc(dvd2);
+        
+        // Chạy thử tính năng seartDVD by title
+        anOrder.searchByTitle("The Lion King");
+
     }
 }
