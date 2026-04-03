@@ -29,5 +29,7 @@ public class AimsProject {
         // Chạy thử tính năng seartDVD by title
         anOrder.searchByTitle("The Lion King");
 
+        // Chạy thử tính năng thanh toán tiền
+        anOrder.placeOrder();
     }
 }
