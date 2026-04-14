@@ -1,3 +1,5 @@
+package hust.soict.dsai.aims.disc;
+
 public class DigitalVideoDisc {
     // Khai báo các thuộc tính private (Đóng gói)
     private String title;

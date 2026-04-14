@@ -1,3 +1,9 @@
+package hust.soict.dsai.aims.test;
+
+import hust.soict.dsai.aims.cart.Cart;
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import hust.soict.dsai.aims.store.Store;
+
 public class AimsProject {
     public static void main(String[] args) {
         // Khởi tạo một giỏ hàng mới
