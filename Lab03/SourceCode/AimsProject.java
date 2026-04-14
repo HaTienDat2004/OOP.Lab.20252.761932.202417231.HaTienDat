@@ -31,5 +31,19 @@ public class AimsProject {
 
         // Chạy thử tính năng thanh toán tiền
         anOrder.placeOrder();
+
+
+        Cart cart = new Cart();
+
+        DigitalVideoDisc dvd5 = new DigitalVideoDisc("Jungle");
+        dvd1.setCost(10);
+
+        DigitalVideoDisc dvd6 = new DigitalVideoDisc("Cinderella");
+        dvd2.setCost(20);
+
+        cart.addDigitalVideoDisc(dvd5);
+        cart.addDigitalVideoDisc(dvd6);
+
+        cart.print();
     }
 }

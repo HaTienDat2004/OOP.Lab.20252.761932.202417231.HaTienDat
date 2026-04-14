@@ -142,4 +142,24 @@ public class Cart {
         addDigitalVideoDisc(dvd1);
         addDigitalVideoDisc(dvd2);
     }
+
+    // 14/04/2026
+    // them ham print()
+    public void print() {
+        System.out.println("***********************CART***********************");
+
+        float totalCost = 0;
+
+        for (int i = 0; i < qtyOrdered; i++) {
+            System.out.println((i + 1) + ". " 
+                + itemsOrdered[i].getTitle() + " - " 
+                + itemsOrdered[i].getCost());
+            
+            totalCost += itemsOrdered[i].getCost();
+        }
+
+        System.out.println("Total cost: " + totalCost);
+        System.out.println("*************************************************");
+    }
+    
 }

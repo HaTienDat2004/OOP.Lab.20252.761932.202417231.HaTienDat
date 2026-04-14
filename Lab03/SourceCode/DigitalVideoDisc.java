@@ -69,11 +69,14 @@ public class DigitalVideoDisc {
     public static int getNbDigitalVideoDiscs(){
        return nbDigitalVideoDiscs;
     }
-    
 
     // --------------------SETTERS----------------------//
     public void setTitle(String title) {
     this.title = title;
-    
-}
+    }
+    public void setCost(float cost) {
+        this.cost = cost;
+    }
+
+
 }
