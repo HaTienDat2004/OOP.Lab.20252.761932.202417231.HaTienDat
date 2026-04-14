@@ -124,4 +124,22 @@ public class Cart {
             }
         }
     }
+
+    //  10/04/2026
+    // Sửa bài tập cho lab 03.
+    // task 1: create a new method that has the same name but with different type of parameter.
+    // addDigitalVideoDisc(DigitalVideoDisc [] dvdList)
+    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList ){
+        for (DigitalVideoDisc dvd : dvdList) {
+            addDigitalVideoDisc(dvd);
+        }
+    }
+
+    // task 2: Create new method named addDigitalVideoDisc
+    // + The signature of this method has two parameters as following:
+    // addDigitalVideoDisc(DigitalVideoDisc dvd1,DigitalVideoDisc dvd2)
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2){
+        addDigitalVideoDisc(dvd1);
+        addDigitalVideoDisc(dvd2);
+    }
 }
