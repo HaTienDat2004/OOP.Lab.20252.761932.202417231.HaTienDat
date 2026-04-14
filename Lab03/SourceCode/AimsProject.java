@@ -27,7 +27,7 @@ public class AimsProject {
         anOrder.removeDigitalVideoDisc(dvd2);
         
         // Chạy thử tính năng seartDVD by title
-        anOrder.searchByTitle("The Lion King");
+        anOrder.searchAndPrintByTitle("The Lion King");
 
         // Chạy thử tính năng thanh toán tiền
         anOrder.placeOrder();
@@ -45,5 +45,12 @@ public class AimsProject {
         cart.addDigitalVideoDisc(dvd6);
 
         cart.print();
+        DigitalVideoDisc result = cart.searchByTitle("Jungle");
+
+        if (result != null) {
+            System.out.println("Found: " + result.getTitle());
+        } else {
+            System.out.println("Not found");
+        }
     }
 }
