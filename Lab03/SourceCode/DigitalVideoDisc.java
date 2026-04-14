@@ -6,12 +6,15 @@ public class DigitalVideoDisc {
     private int length;
     private float cost;
 
+    private static int nbDigitalVideoDiscs = 0;
+
     // ----------------- CONSTRUCTORS ----------------- //
 
     // 1. Tạo DVD chỉ bằng title
     public DigitalVideoDisc(String title) {
         super();
         this.title = title;
+        nbDigitalVideoDiscs++;
     }
 
     // 2. Tạo DVD bằng category, title và cost
@@ -62,8 +65,15 @@ public class DigitalVideoDisc {
     public float getCost() {
         return cost;
     }
+    
+    public static int getNbDigitalVideoDiscs(){
+       return nbDigitalVideoDiscs;
+    }
+    
+
     // --------------------SETTERS----------------------//
     public void setTitle(String title) {
     this.title = title;
+    
 }
 }
