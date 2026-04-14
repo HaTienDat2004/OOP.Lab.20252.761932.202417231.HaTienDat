@@ -52,5 +52,9 @@ public class AimsProject {
         } else {
             System.out.println("Not found");
         }
+        Store store = new Store();
+        store.addDVD(dvd1);
+        store.addDVD(dvd2);
+        store.displayStore();
     }
 }
