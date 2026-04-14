@@ -67,7 +67,7 @@ public class Cart {
         }
     }
     // Tìm kiếm DVD theo title
-    public void searchByTitle(String title) {
+    public void searchAndPrintByTitle(String title) {
         boolean matchFound = false;
                 System.out.println("***************************************************");
         System.out.println("Search results for: '" + title + "'");
@@ -161,5 +161,12 @@ public class Cart {
         System.out.println("Total cost: " + totalCost);
         System.out.println("*************************************************");
     }
-    
+    public DigitalVideoDisc searchByTitle (String title) {
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (itemsOrdered[i].getTitle().equals(title)) {
+                return itemsOrdered[i];
+            }
+        }
+        return null;
+    }
 }
