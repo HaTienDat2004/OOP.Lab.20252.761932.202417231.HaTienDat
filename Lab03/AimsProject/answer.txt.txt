@@ -1,0 +1,10 @@
+1. What class should implement the Comparable interface?
+Lớp trừu tượng Media là lựa chọn phù hợp nhất để triển khai giao diện Comparable. Khi Media triển khai Comparable, tất cả các lớp con (như Book, CompactDisc, DigitalVideoDisc) đều sẽ kế thừa khả năng so sánh này, cho phép chúng ta so sánh bất kỳ đối tượng phương tiện nào với nhau.
+2. In those classes, how should you implement the compareTo()method be to reflect the ordering that we want?
+Phương thức compareTo() nên được triển khai dựa trên thứ tự ưu tiên của các thuộc tính muốn so sánh. Nếu muốn so sánh theo tiêu đề trước, sau đó đến giá, nên so sánh tiêu đề trước. Nếu hai tiêu đề giống nhau, phương thức sẽ tiếp tục so sánh giá. Phương thức nên trả về số âm, số 0, hoặc số dương tùy thuộc vào việc đối tượng hiện tại nhỏ hơn, bằng, hoặc lớn hơn đối tượng được truyền vào.
+3. Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+Không thể có hai quy tắc sắp xếp khác nhau khi chỉ sử dụng giao diện Comparable. Giao diện Comparable chỉ cho phép định nghĩa một cách so sánh duy nhất cho lớp. Để có nhiều quy tắc sắp xếp khác nhau, cần sử dụng giao diện Comparator. Mỗi lớp Comparator có thể định nghĩa một chiến lược sắp xếp khác nhau, và có thể tạo nhiều lớp Comparator theo nhu cầu.
+4. Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+Có thể triển khai Comparable trong lớp Media với quy tắc sắp xếp chung, sau đó ghi đè phương thức compareTo() trong lớp DigitalVideoDisc để áp dụng quy tắc sắp xếp riêng cho DVD. Trong phương thức ghi đè, cần kiểm tra xem đối tượng được so sánh có phải là DVD không, và áp dụng quy tắc sắp xếp phù hợp.
+Cách tiếp cận khác là sử dụng các lớp Comparator riêng biệt cho từng loại phương tiện. Điều này giữ cho logic so sánh tách biệt khỏi các lớp dữ liệu và cho phép linh hoạt hơn. Có thể tạo một Comparator chung cho Media và một Comparator riêng cho DVD.
+
